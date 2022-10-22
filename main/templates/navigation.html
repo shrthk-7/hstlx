@@ -1,0 +1,41 @@
+<header class="site-header">
+	<nav class="navbar navbar-expand-md navbar-dark bg-steel fixed-top">
+		<div class="container">
+			<a href="" class="navbar-brand mr-4">Home Page</a>
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-targer>
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarToggle">
+				<div class="navbar-nav mr-auto">
+					<a href="/" class="nav-item nav-link">Home</a>
+					<a href="/about" class="nav-item nav-link">About</a>
+				</div>
+				<div class="navbar-nav">
+					<a href="/login" class="nav-item nav-link">Login</a>
+					<a href="/register" class="nav-item nav-link">Register</a>
+				</div>
+			</div>
+		</div>
+	</nav>
+</header>
+
+<main class="container" role="main">
+	<div class="row">
+		<div class="col-md-8">
+			{% block content %}{% endblock content %}
+		</div>
+		<div class="col-md-4">
+			<div class="content-section">
+				<h3>Sidebar</h3>
+				<p class="text-muted">Put Information Here
+					<ul>
+						<li>Latest Posts</li>
+						<li>Announcements</li>
+						<li>Calenders</li>
+						<li>etc</li>
+					</ul>
+				</p>
+			</div>
+		</div>
+	</div>
+</main>
