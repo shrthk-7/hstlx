@@ -2,3 +2,9 @@
 *.jpg
 *.jpeg
 *.db
+test.css
+test.html
+**/__pycache__/**
+.editorconfig
+.vscode/
+.gitignore

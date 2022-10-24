@@ -1,6 +1,6 @@
 {% extends "layout.html" %}
 {% block content %}
-	<div class="media d-flex mb-3" style="border: 2px solid darkgrey; border-radius:5px;">
+	<div class="media d-flex mb-3" 	">
 		<img src='{{ url_for("static", filename="profile_pictures/"+user.image_file)}}' alt="" class="article-img" style="height: 4rem; width: auto; border-radius: 10%;">
 		<h1 class="mb-3">Posts by {{ user.username }} ({{ posts.total }})</h1>
 	</div>

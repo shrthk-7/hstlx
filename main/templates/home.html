@@ -1,7 +1,8 @@
 {% extends "layout.html" %}
 {% block content %}
-	{% for post in posts.items %}
-		<article class="media content-section" style="border: 1px solid black; box-shadow: 0 0 20px 0px rgb(20, 20, 20),0 0 10px 0px rgba(10, 10, 10, 0)">
+	<div class="card-container text-light">
+		{% for post in posts.items %}
+		<!-- <article class="media content-section" style="border: 1px solid black; box-shadow: 0 0 20px 0px rgb(20, 20, 20),0 0 10px 0px rgba(10, 10, 10, 0)">
 			<div class="media-body">
 				<div class="media d-flex">	
 					<img src='{{ url_for("static", filename="profile_pictures/"+post.author.image_file)}}' alt="" class="article-img" style="width: 2rem; height: 2rem; border-radius: 10%;">
@@ -15,8 +16,33 @@
 				<p class="article-content mt-2 mb-1">{{ post.content }}</p>
 				<small class="info alert alert-success p-1"> &#8377 {{ post.price }}</small>
 			</div>
-		</article>
-	{% endfor %}
+		</article> -->
+			<div class="row">
+				<div class="col mb-4">
+					<div class="card h-100 bg-dark">
+						<div class="view overlay">
+							<img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Others/images/16.webp" alt="Card image cap">
+							<a href="#!">
+								<div class="mask rgba-white-slight"></div>
+							</a>
+						</div>
+						<div class="card-body">
+							<div class="media d-flex mb-1">	
+								<div class="media-body">
+									<a href="{{ url_for('user_posts', username=post.author.username) }}" class="mr-2 text-light">{{ post.author.username }}</a>
+									<small class="text-muted">{{ post.date_posted.strftime('%d-%m-%Y') }}</small>
+									<button class="btn-list-type btn btn-dark p-1" type="button">{{ post.list_type }}</button>
+								</div>
+							</div>
+							<h4 class="card-title text-warning">{{ post.title }}</h4>
+							<p class="card-text">{{ post.content }}</p>
+							<button type="button" class="btn-read-more btn btn-light-blue btn-md">Read more</button>
+						</div>
+					</div>
+				</div>
+			</div>
+			{% endfor %}
+		</div>
 
 	{% for page_num in posts.iter_pages(left_edge=1, left_current=1, right_current=2, right_edge=1) %}
 		{% if page_num %}
